@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "Завдання 9.5: Експерименти з правами доступу"
+temp_file="tempfile.txt"
+echo "Тестовий вміст" > "$temp_file"
+sudo chown root:root "$temp_file"
+sudo chmod 000 "$temp_file"
+echo "Спроба читання:"
+cat "$temp_file"
+echo "Результат: $?"
+sudo rm -f "$temp_file"
+echo "Виконання завдання 9.5 завершено"
