@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "Завдання 9.3: Експерименти з правами власності"
+test_file="testfile.txt"
+echo "Початковий вміст" > "$test_file"
+sudo cp "$test_file" "/root/copied_file.txt"
+sudo cp "/root/copied_file.txt" "$HOME/copied_file.txt"
+sudo chown root:root "$HOME/copied_file.txt"
+echo "Спроба зміни файлу:"
+echo "Новий вміст" >> "$HOME/copied_file.txt"
+echo "Спроба видалення:"
+rm -f "$HOME/copied_file.txt"
+sudo rm -f "/root/copied_file.txt" "$test_file"
+echo "Виконання завдання 9.3 завершено"
